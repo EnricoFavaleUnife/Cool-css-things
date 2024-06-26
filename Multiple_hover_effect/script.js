@@ -1,12 +1,8 @@
 const items = document.querySelectorAll('.list .item');
 
-console.log(items);
-
 items.forEach((item, index) => {
     item.addEventListener('mouseover', () => {
         items.forEach(i => i.classList.remove('hover', 'prev1', 'prev2'));
-
-        console.log(index);
 
         item.classList.add('hover');
         if (index > 0) {
