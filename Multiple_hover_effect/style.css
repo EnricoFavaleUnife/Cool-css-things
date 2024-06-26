@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+    font-family: "Roboto";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;  
+    background-color: rgb(7, 26, 45);
+    color: #ddd;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.list .item {
+    transition: .5s;
+    filter: brightness(0);
+}
+
+.list .item:hover {
+    filter: brightness(1);
+    transform: translateZ(10vw);
+}
+
+.list .item:hover + * {
+    filter: brightness(0.6);
+    transform: translateZ(6vw) rotateY(30deg);
+}
+
+.list .item:hover + * + * {
+    filter: brightness(0.4);
+    transform: translateZ(3vw) rotateY(15deg);
+}
+
+/* has is not supported on some browser like chrome */
+
+.list .item:has(+ *:hover) {
+    filter: brightness(0.6);
+    transform: translateZ(6vw) rotateY(-30deg);
+}
+
+.list .item:has(+ * + *:hover) {
+    filter: brightness(0.4);
+    transform: translateZ(3vw) rotateY(-15deg);
+}
+
+/* Without has but using js */
+
+.list .item.prev1 {
+    filter: brightness(0.6);
+    transform: translateZ(6vw) rotateY(-30deg);
+}
+
+.list .item.prev2 {
+    filter: brightness(0.4);
+    transform: translateZ(3vw) rotateY(-15deg);
+}
