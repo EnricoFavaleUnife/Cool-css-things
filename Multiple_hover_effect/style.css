@@ -23,7 +23,7 @@ body {
 
 .list .item {
     transition: .5s;
-    filter: brightness(0);
+    filter: brightness(.2);
 }
 
 .list .item:hover {
@@ -63,4 +63,34 @@ body {
 .list .item.prev2 {
     filter: brightness(0.4);
     transform: translateZ(3vw) rotateY(-15deg);
+}
+
+/* Home button */
+
+.home-button-container {
+    position: fixed;
+    bottom: 5vh;
+    
+    z-index: 1;
+}
+
+.home-button {
+    color: #ddd;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1vw;
+    padding: 0.5vw 1vw;
+    margin: 0.5vw;
+    border-radius: 20px; 
+    opacity: 0.9; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    transition: all 0.3s ease; 
+}
+
+.home-button:hover {
+    background-color: rgba(153, 153, 153, 0.8); 
+    color: #222; 
+    transform: scale(1.1); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); 
 }
